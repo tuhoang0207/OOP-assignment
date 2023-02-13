@@ -53,15 +53,18 @@
             Console.WriteLine("1. Add new book");
             Console.WriteLine("2. Show list book");
             Console.WriteLine("3. Update book");
-            Console.WriteLine("4. Sort by name");
+            Console.WriteLine("4. Search by name");
+            Console.WriteLine("5. Sort by name");
+            Console.WriteLine("6. Delete by name");
         }
 
+        static int id = 1;
         public static void addBook()
         {
             Book b = new Book();
 
-            Console.WriteLine("enter book id ");
-            b.bookId = Convert.ToInt32(Console.ReadLine());
+
+            b.bookId = id;
 
             Console.WriteLine("enter book name ");
             b.name = Console.ReadLine();
@@ -76,17 +79,19 @@
             b.genre = Console.ReadLine();
 
             list.Add(b);
-
+            id++;
         }
 
         public static void printBook()
         {
             foreach (Book book in list)
             {
+                Console.WriteLine(book.bookId);
                 Console.WriteLine("Book name: " + book.name);
                 Console.WriteLine("Book author " + book.author);
                 Console.WriteLine("Book quantity " + book.quantity);
                 Console.WriteLine("Book genre " + book.genre);
+                Console.WriteLine("==========================");
             }
         }
 
@@ -95,9 +100,9 @@
             string name;
             Console.WriteLine("enter book name you want to update ");
             name = Console.ReadLine();
-            foreach(Book b in list)
+            foreach (Book b in list)
             {
-                if(b.name.Equals(name))
+                if (b.name.Equals(name))
                 {
                     Console.WriteLine("enter book name ");
                     b.name = Console.ReadLine();
@@ -122,12 +127,14 @@
             Console.WriteLine("enter book name you want to search ");
             name = Console.ReadLine();
 
-            foreach (Book b in list) { 
-                if(b.name.Equals(name))
+            foreach (Book b in list)
+            {
+                if (b.name.Equals(name))
                 {
                     Console.WriteLine("Found the book you want to search ");
                     Console.WriteLine(b.name + " of " + b.author);
-                } else
+                }
+                else
                 {
                     Console.WriteLine("The book you want to search is not found ");
                 }
@@ -136,7 +143,25 @@
 
         public static void sortBookByName()
         {
-            
+            list.Sort((x, y) => string.Compare(x.name, y.name));
+        }
+
+        public static void deleteByName()
+        {
+            string name;
+            Console.WriteLine("enter book name you want to delete ");
+            name = Console.ReadLine();
+            foreach (Book b in list)
+            {
+                if (b.name.Equals(name))
+                {
+                    list.Remove(b);
+                }
+                else
+                {
+                    Console.WriteLine("The book you want to delete is not found ");
+                }
+            }
         }
         public static void Main(string[] args)
         {
@@ -155,7 +180,7 @@
                         addBook();
                         printBook();
                         break;
-                    case 2: 
+                    case 2:
                         printBook();
                         break;
                     case 3:
@@ -165,8 +190,15 @@
                     case 4:
                         searchBook();
                         break;
+                    case 5:
+                        sortBookByName();
+                        printBook();
+                        break;
+                    case 6:
+                        deleteByName();
+                        break;
                 }
-            } while (true);
+            } while (option != null);
         }
     }
 
