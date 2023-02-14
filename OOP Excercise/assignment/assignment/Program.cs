@@ -35,7 +35,10 @@
         {
             string loanCardId;
             string libraryCardId;
+<<<<<<< HEAD
             string cardOwner;
+=======
+>>>>>>> 08d39ceada644deec1e3a0b7bd750b8ff68628e4
             string bookName;
             string bookId;
             DateTime loanDate;
@@ -44,7 +47,10 @@
             class main
             {
                 static List<Book> list = new List<Book>();
+<<<<<<< HEAD
                 static List<LoanCard> loanCardList = new List<LoanCard>();
+=======
+>>>>>>> 08d39ceada644deec1e3a0b7bd750b8ff68628e4
                 public static void mainMenu()
                 {
                     Console.WriteLine("---Welcome to VTCA library---");
@@ -65,13 +71,21 @@
                     Console.WriteLine("6. Delete by name");
                 }
 
+<<<<<<< HEAD
                 static int bookId = 1;
+=======
+                static int id = 1;
+>>>>>>> 08d39ceada644deec1e3a0b7bd750b8ff68628e4
                 public static void addBook()
                 {
                     Book b = new Book();
 
 
+<<<<<<< HEAD
                     b.bookId = bookId;
+=======
+                    b.bookId = id;
+>>>>>>> 08d39ceada644deec1e3a0b7bd750b8ff68628e4
 
                     Console.WriteLine("enter book name ");
                     b.name = Console.ReadLine();
@@ -86,7 +100,11 @@
                     b.genre = Console.ReadLine();
 
                     list.Add(b);
+<<<<<<< HEAD
                     bookId++;
+=======
+                    id++;
+>>>>>>> 08d39ceada644deec1e3a0b7bd750b8ff68628e4
                 }
 
                 public static void printBook()
@@ -171,6 +189,7 @@
                     }
                 }
 
+<<<<<<< HEAD
                 public static void loanCardMenu()
                 {
                     Console.WriteLine("Manage library card");
@@ -212,6 +231,12 @@
                     }
                 }
 
+=======
+                public static void addNewLoanBookCard()
+                {
+
+                }
+>>>>>>> 08d39ceada644deec1e3a0b7bd750b8ff68628e4
                 public static void Main(string[] args)
                 {
 
@@ -253,6 +278,7 @@
                                         deleteByName();
                                         break;
                                 }
+<<<<<<< HEAD
                                 break;
                             case 2:
                                 loanCardMenu();
@@ -269,6 +295,10 @@
                                          showListLoanCard();
                                         break;
                                 }
+=======
+                            case 2:
+                                addNewLoanBookCard();
+>>>>>>> 08d39ceada644deec1e3a0b7bd750b8ff68628e4
                                 break;
                             default:
 
@@ -282,3 +312,7 @@
     }
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 08d39ceada644deec1e3a0b7bd750b8ff68628e4
