@@ -35,6 +35,8 @@
         {
             string loanCardId;
             string libraryCardId;
+            string cardOwner;
+
             string bookName;
             string bookId;
             DateTime loanDate;
@@ -43,6 +45,7 @@
             class main
             {
                 static List<Book> list = new List<Book>();
+                static List<LoanCard> loanCardList = new List<LoanCard>();
                 public static void mainMenu()
                 {
                     Console.WriteLine("---Welcome to VTCA library---");
@@ -63,12 +66,15 @@
                     Console.WriteLine("6. Delete by name");
                 }
 
+                static int bookId = 1;
+
                 static int id = 1;
+
                 public static void addBook()
                 {
                     Book b = new Book();
 
-
+                    b.bookId = bookId;
                     b.bookId = id;
 
                     Console.WriteLine("enter book name ");
@@ -84,6 +90,7 @@
                     b.genre = Console.ReadLine();
 
                     list.Add(b);
+                    bookId++;
                     id++;
                 }
 
@@ -169,10 +176,47 @@
                     }
                 }
 
+                public static void loanCardMenu()
+                {
+                    Console.WriteLine("Manage library card");
+                    Console.WriteLine("1. Add new card");
+                    Console.WriteLine("2. Show list loan card");
+                    Console.WriteLine("3. Update card information");
+                }
+
+
                 public static void addNewLoanBookCard()
                 {
+                    LoanCard card = new LoanCard();
 
+                    Console.WriteLine("enter loan card id ");
+                    card.libraryCardId = Console.ReadLine();
+
+                    Console.WriteLine("enter library card id ");
+                    card.libraryCardId = Console.ReadLine();
+
+                    Console.WriteLine("enter owner name ");
+                    card.cardOwner = Console.ReadLine();
+
+                    Console.WriteLine("enter book name");
+                    card.bookName = Console.ReadLine();
+
+                    Console.WriteLine("enter book id ");
+                    card.bookId = Console.ReadLine();
+
+                    loanCardList.Add(card);
                 }
+
+                public static void showListLoanCard()
+                {
+                    foreach (LoanCard c in loanCardList)
+                    {
+                        Console.WriteLine("book name " + c.bookName);
+                        Console.WriteLine("owner by " + c.cardOwner);
+                        Console.WriteLine("==========================");
+                    }
+                }
+               
                 public static void Main(string[] args)
                 {
 
@@ -214,8 +258,26 @@
                                         deleteByName();
                                         break;
                                 }
+                                break;
+                            case 2:
+                                loanCardMenu();
+
+                                Console.WriteLine("enter your option");
+                                option = Convert.ToInt32(Console.ReadLine());
+
+                                switch (option)
+                                {
+                                    case 1:
+                                        addNewLoanBookCard();
+                                        break;
+                                    case 2:
+                                        showListLoanCard();
+                                        break;
+                                }
+                                break;
                             case 2:
                                 addNewLoanBookCard();
+
                                 break;
                             default:
 
@@ -228,5 +290,3 @@
         }
     }
 }
-
-
