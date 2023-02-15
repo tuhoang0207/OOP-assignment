@@ -1,4 +1,7 @@
-﻿class Book
+﻿using System.Globalization;
+using System;
+
+class Book
 {
     int bookId;
     string name;
@@ -39,8 +42,8 @@
 
             string bookName;
             string bookId;
-            DateTime loanDate;
-            DateTime giveBackDate;
+            DateOnly loanDate;
+            DateOnly giveBackDate;
 
             class main
             {
@@ -192,17 +195,17 @@
                     Console.WriteLine("enter loan card id ");
                     card.libraryCardId = Console.ReadLine();
 
-                    Console.WriteLine("enter library card id ");
-                    card.libraryCardId = Console.ReadLine();
-
-                    Console.WriteLine("enter owner name ");
-                    card.cardOwner = Console.ReadLine();
-
-                    Console.WriteLine("enter book name");
+                    Console.WriteLine("enter book name ");
                     card.bookName = Console.ReadLine();
 
-                    Console.WriteLine("enter book id ");
-                    card.bookId = Console.ReadLine();
+                    Console.WriteLine("enter owner ");
+                    card.cardOwner = Console.ReadLine();
+
+                    Console.WriteLine("enter loan date");
+                    card.loanDate = DateOnly.Parse(Console.ReadLine());
+
+                    Console.WriteLine("enter give back date");
+                    card.giveBackDate = DateOnly.Parse(Console.ReadLine());
 
                     loanCardList.Add(card);
                 }
@@ -213,10 +216,38 @@
                     {
                         Console.WriteLine("book name " + c.bookName);
                         Console.WriteLine("owner by " + c.cardOwner);
+                        Console.WriteLine("loan date " + c.loanDate.ToString("d", new CultureInfo("es-ES")));
+                        Console.WriteLine("give back date " + c.giveBackDate);
                         Console.WriteLine("==========================");
                     }
                 }
                
+                public static void updateLoanCard()
+                {
+                    string name;
+                    Console.WriteLine("enter loan card owner you want to update ");
+                    name = Console.ReadLine();
+                    foreach (LoanCard c in loanCardList)
+                    {
+                        if (c.cardOwner.Equals(name))
+                        {
+                            Console.WriteLine("enter owner name ");
+                            c.cardOwner = Console.ReadLine();
+
+                            Console.WriteLine("enter book name ");
+                            c.bookName = Console.ReadLine();
+
+                            Console.WriteLine("enter loan date ");
+                            c.loanDate = DateOnly.Parse(Console.ReadLine());
+
+                            Console.WriteLine("enter give back date ");
+                            c.giveBackDate = DateOnly.Parse(Console.ReadLine());
+
+                            Console.WriteLine("update successful");
+                        }
+                    }
+                }
+
                 public static void Main(string[] args)
                 {
 
@@ -273,9 +304,12 @@
                                     case 2:
                                         showListLoanCard();
                                         break;
+                                    case 3:
+                                        updateLoanCard();
+                                        break;
                                 }
                                 break;
-                            case 2:
+                            case 3:
                                 addNewLoanBookCard();
 
                                 break;
