@@ -38,15 +38,8 @@ class Book
         {
             string loanCardId;
             string libraryCardId;
-<<<<<<< HEAD
-            string cardOwner;
 
-=======
-<<<<<<< HEAD
             string cardOwner;
-=======
->>>>>>> 08d39ceada644deec1e3a0b7bd750b8ff68628e4
->>>>>>> 35a63550dea23871cad19b1d322db8def1f33929
             string bookName;
             string bookId;
             DateOnly loanDate;
@@ -55,14 +48,8 @@ class Book
             class main
             {
                 static List<Book> list = new List<Book>();
-<<<<<<< HEAD
+
                 static List<LoanCard> loanCardList = new List<LoanCard>();
-=======
-<<<<<<< HEAD
-                static List<LoanCard> loanCardList = new List<LoanCard>();
-=======
->>>>>>> 08d39ceada644deec1e3a0b7bd750b8ff68628e4
->>>>>>> 35a63550dea23871cad19b1d322db8def1f33929
                 public static void mainMenu()
                 {
                     Console.WriteLine("---Welcome to VTCA library---");
@@ -83,32 +70,14 @@ class Book
                     Console.WriteLine("6. Delete by name");
                 }
 
-<<<<<<< HEAD
                 static int bookId = 1;
-
                 static int id = 1;
-
-=======
-<<<<<<< HEAD
-                static int bookId = 1;
-=======
-                static int id = 1;
->>>>>>> 08d39ceada644deec1e3a0b7bd750b8ff68628e4
->>>>>>> 35a63550dea23871cad19b1d322db8def1f33929
                 public static void addBook()
                 {
                     Book b = new Book();
 
-<<<<<<< HEAD
                     b.bookId = bookId;
-=======
-
-<<<<<<< HEAD
-                    b.bookId = bookId;
-=======
->>>>>>> 35a63550dea23871cad19b1d322db8def1f33929
                     b.bookId = id;
->>>>>>> 08d39ceada644deec1e3a0b7bd750b8ff68628e4
 
                     Console.WriteLine("enter book name ");
                     b.name = Console.ReadLine();
@@ -123,15 +92,9 @@ class Book
                     b.genre = Console.ReadLine();
 
                     list.Add(b);
-<<<<<<< HEAD
                     bookId++;
-=======
-<<<<<<< HEAD
-                    bookId++;
-=======
->>>>>>> 35a63550dea23871cad19b1d322db8def1f33929
+
                     id++;
->>>>>>> 08d39ceada644deec1e3a0b7bd750b8ff68628e4
                 }
 
                 public static void printBook()
@@ -216,10 +179,6 @@ class Book
                     }
                 }
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 35a63550dea23871cad19b1d322db8def1f33929
                 public static void loanCardMenu()
                 {
                     Console.WriteLine("Manage library card");
@@ -227,10 +186,6 @@ class Book
                     Console.WriteLine("2. Show list loan card");
                     Console.WriteLine("3. Update card information");
                 }
-
-<<<<<<< HEAD
-
-=======
               
                 public static void addNewLoanBookCard()
                 {
@@ -244,6 +199,12 @@ class Book
 
                     Console.WriteLine("enter owner name ");
                     card.cardOwner = Console.ReadLine();
+
+                    Console.WriteLine("enter loan date ");
+                    card.loanDate = DateOnly.Parse(Console.ReadLine());
+
+                    Console.WriteLine("enter give back date ");
+                    card.giveBackDate = DateOnly.Parse(Console.ReadLine());
 
                     Console.WriteLine("enter book name");
                     card.bookName = Console.ReadLine();
@@ -260,47 +221,16 @@ class Book
                     {
                         Console.WriteLine("book name " + c.bookName);
                         Console.WriteLine("owner by " + c.cardOwner);
-                        Console.WriteLine("==========================");
-                    }
-                }
-
-=======
->>>>>>> 35a63550dea23871cad19b1d322db8def1f33929
-                public static void addNewLoanBookCard()
-                {
-                    LoanCard card = new LoanCard();
-
-                    Console.WriteLine("enter loan card id ");
-                    card.libraryCardId = Console.ReadLine();
-
-                    Console.WriteLine("enter book name ");
-                    card.bookName = Console.ReadLine();
-
-                    Console.WriteLine("enter owner ");
-                    card.cardOwner = Console.ReadLine();
-
-                    Console.WriteLine("enter loan date");
-                    card.loanDate = DateOnly.Parse(Console.ReadLine());
-
-                    Console.WriteLine("enter give back date");
-                    card.giveBackDate = DateOnly.Parse(Console.ReadLine());
-
-                    loanCardList.Add(card);
-                }
-<<<<<<< HEAD
-
-                public static void showListLoanCard()
-                {
-                    foreach (LoanCard c in loanCardList)
-                    {
-                        Console.WriteLine("book name " + c.bookName);
-                        Console.WriteLine("owner by " + c.cardOwner);
                         Console.WriteLine("loan date " + c.loanDate.ToString("d", new CultureInfo("es-ES")));
-                        Console.WriteLine("give back date " + c.giveBackDate);
+                        Console.WriteLine("give back date " + c.giveBackDate.ToString("d", new CultureInfo("es-ES")));
                         Console.WriteLine("==========================");
                     }
                 }
-               
+
+
+
+             
+
                 public static void updateLoanCard()
                 {
                     string name;
@@ -327,9 +257,6 @@ class Book
                     }
                 }
 
-=======
->>>>>>> 08d39ceada644deec1e3a0b7bd750b8ff68628e4
->>>>>>> 35a63550dea23871cad19b1d322db8def1f33929
                 public static void Main(string[] args)
                 {
 
@@ -371,28 +298,8 @@ class Book
                                         deleteByName();
                                         break;
                                 }
-<<<<<<< HEAD
+                               
                                 break;
-=======
-<<<<<<< HEAD
-                                break;
-                            case 2:
-                                loanCardMenu();
-
-                                Console.WriteLine("enter your option");
-                                option = Convert.ToInt32(Console.ReadLine());
-
-                                switch(option)
-                                {
-                                    case 1:
-                                        addNewLoanBookCard();
-                                    break;
-                                        case 2:
-                                         showListLoanCard();
-                                        break;
-                                }
-=======
->>>>>>> 35a63550dea23871cad19b1d322db8def1f33929
                             case 2:
                                 loanCardMenu();
 
@@ -414,11 +321,6 @@ class Book
                                 break;
                             case 3:
                                 addNewLoanBookCard();
-<<<<<<< HEAD
-
-=======
->>>>>>> 08d39ceada644deec1e3a0b7bd750b8ff68628e4
->>>>>>> 35a63550dea23871cad19b1d322db8def1f33929
                                 break;
                             default:
 
@@ -431,11 +333,3 @@ class Book
         }
     }
 }
-<<<<<<< HEAD
-=======
-
-<<<<<<< HEAD
-=======
-
->>>>>>> 08d39ceada644deec1e3a0b7bd750b8ff68628e4
->>>>>>> 35a63550dea23871cad19b1d322db8def1f33929
