@@ -1,7 +1,10 @@
 ﻿using System.Globalization;
 using System;
 <<<<<<< HEAD
+<<<<<<< HEAD
 using System.Net;
+=======
+>>>>>>> 5c99770f32ffd2cc39d2e133813e3f90aee8e40f
 =======
 >>>>>>> 5c99770f32ffd2cc39d2e133813e3f90aee8e40f
 
@@ -58,8 +61,11 @@ class Book
 
                 static List<LoanCard> loanCardList = new List<LoanCard>();
 <<<<<<< HEAD
+<<<<<<< HEAD
 
                 static List<libraryCard> libraryCardList = new List<libraryCard>();
+=======
+>>>>>>> 5c99770f32ffd2cc39d2e133813e3f90aee8e40f
 =======
 >>>>>>> 5c99770f32ffd2cc39d2e133813e3f90aee8e40f
                 public static void mainMenu()
@@ -104,6 +110,7 @@ class Book
                     b.genre = Console.ReadLine();
                     list.Add(b);
 <<<<<<< HEAD
+<<<<<<< HEAD
 
                     SaveToTxt();
                     writeToFile("books",b.name);
@@ -122,6 +129,11 @@ class Book
                             tw.WriteLine(string.Format("Id:{0} Book: {1} - Genre: {2} written by: {3} quantity {4}",item.bookId, item.name,item.genre,item.author,item.quantity.ToString()));
                         }
                     }
+=======
+                    bookId++;
+
+                    id++;
+>>>>>>> 5c99770f32ffd2cc39d2e133813e3f90aee8e40f
 =======
                     bookId++;
 
@@ -219,8 +231,11 @@ class Book
                     Console.WriteLine("3. Update card information");
                 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
+=======
+>>>>>>> 5c99770f32ffd2cc39d2e133813e3f90aee8e40f
               
 >>>>>>> 5c99770f32ffd2cc39d2e133813e3f90aee8e40f
                 public static void addNewLoanBookCard()
@@ -266,7 +281,11 @@ class Book
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+             
+>>>>>>> 5c99770f32ffd2cc39d2e133813e3f90aee8e40f
 =======
              
 >>>>>>> 5c99770f32ffd2cc39d2e133813e3f90aee8e40f
@@ -297,6 +316,7 @@ class Book
                     }
                 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
                 public static void libraryCardMenu()
                 {
@@ -371,6 +391,8 @@ class Book
 
 =======
 >>>>>>> 5c99770f32ffd2cc39d2e133813e3f90aee8e40f
+=======
+>>>>>>> 5c99770f32ffd2cc39d2e133813e3f90aee8e40f
                 public static void Main(string[] args)
                 {
 
@@ -413,7 +435,11 @@ class Book
                                         break;
                                 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+                               
+>>>>>>> 5c99770f32ffd2cc39d2e133813e3f90aee8e40f
 =======
                                
 >>>>>>> 5c99770f32ffd2cc39d2e133813e3f90aee8e40f
@@ -434,6 +460,7 @@ class Book
                                         break;
                                     case 3:
                                         updateLoanCard();
+<<<<<<< HEAD
 <<<<<<< HEAD
                                         break;
                                 }
@@ -463,6 +490,13 @@ class Book
                             case 3:
                                 addNewLoanBookCard();
 >>>>>>> 5c99770f32ffd2cc39d2e133813e3f90aee8e40f
+=======
+                                        break;
+                                }
+                                break;
+                            case 3:
+                                addNewLoanBookCard();
+>>>>>>> 5c99770f32ffd2cc39d2e133813e3f90aee8e40f
                                 break;
                             default:
                                 System.Environment.Exit(0);
@@ -475,7 +509,11 @@ class Book
         }
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 5c99770f32ffd2cc39d2e133813e3f90aee8e40f
 =======
 }
 >>>>>>> 5c99770f32ffd2cc39d2e133813e3f90aee8e40f
