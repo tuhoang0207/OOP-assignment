@@ -61,8 +61,8 @@ class Book
                     Console.WriteLine("---Welcome to VTCA library---");
                     Console.WriteLine("=============================");
                     Console.WriteLine("1. Manage book");
-                    Console.WriteLine("2. Manage library card");
-                    Console.WriteLine("3. Manage book loan card");
+                    Console.WriteLine("2. Manage book loan card");
+                    Console.WriteLine("3. Manage library card");
                 }
 
                 public static void bookMenu()
@@ -98,23 +98,57 @@ class Book
                     b.genre = Console.ReadLine();
                     list.Add(b);
 
-                    SaveToTxt();
-                    writeToFile("books", b.name);
+                    SaveToTxt("Books");
+                    //writeToFile("books", b.name);
 
                     bookId++;
 
                     id++;
                 }
 
-                public static void SaveToTxt()
+                public static void SaveToTxt(string filename)
                 {
-                    using (TextWriter tw = new StreamWriter("Book.txt"))
+                    switch (filename)
                     {
-                        foreach (var item in list)
-                        {
-                            tw.WriteLine(string.Format("Id:{0} Book: {1} - Genre: {2} written by: {3} quantity {4}", item.bookId, item.name, item.genre, item.author, item.quantity.ToString()));
-                        }
+                        case "Books":
+                            using (TextWriter tw = new StreamWriter(filename + ".txt"))
+                            {
+                                foreach (var item in list)
+                                {
+                                    tw.WriteLine(string.Format("Id:{0} Book: {1} - Genre: {2} written by: {3} quantity {4}", item.bookId, item.name, item.genre, item.author, item.quantity.ToString()));
+                                }
+                            }
+                            break;
+                        case "loanBookCard":
+                            using (TextWriter tw = new StreamWriter(filename + ".txt"))
+                            {
+                                foreach (var item in loanCardList)
+                                {
+                                    tw.WriteLine(string.Format("Id loan card:{0} library card: {1} , Book: {2} book id: {3} loan date {4} give back date {5}", 
+                                        item.loanCardId, 
+                                        item.libraryCardId, 
+                                        item.bookName,
+                                        item.bookId, 
+                                        item.loanDate.ToString(),
+                                        item.giveBackDate.ToString()));
+                                }
+                            }
+                            break;
+                        case "libraryCard":
+                            using (TextWriter tw = new StreamWriter(filename + ".txt"))
+                            {
+                                foreach (var item in libraryCardList)
+                                {
+                                    tw.WriteLine(string.Format("Id:{0} owner: {1} cmnd id: {2} created date: {3}", 
+                                        item.cardId, 
+                                        item.name, 
+                                        item.cmndId, 
+                                        item.dateCreated.ToString()));
+                                }
+                            }
+                            break;
                     }
+
                 }
 
                 public static void printBook()
@@ -230,8 +264,10 @@ class Book
 
                     Console.WriteLine("enter book id ");
                     card.bookId = Console.ReadLine();
-
+                    
                     loanCardList.Add(card);
+                    SaveToTxt("loanBookCard");
+                
                 }
 
                 public static void showListLoanCard()
@@ -295,8 +331,10 @@ class Book
 
                     Console.WriteLine("enter date created ");
                     lcard.dateCreated = DateOnly.Parse(Console.ReadLine());
-
+                    
                     libraryCardList.Add(lcard);
+                    SaveToTxt("libraryCard");
+                    
                 }
 
                 public static void showListLibraryCard()
@@ -423,7 +461,7 @@ class Book
                                         updateLibraryCard();
                                         break;
                                 }
-                                        break;
+                                break;
                             default:
                                 System.Environment.Exit(0);
                                 break;

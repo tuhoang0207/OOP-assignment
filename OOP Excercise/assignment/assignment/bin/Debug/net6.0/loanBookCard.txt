@@ -1,0 +1,1 @@
+Id loan card: library card: 1 , Book: toan book id: 1 loan date 11/1/2022 give back date 12/1/2022
