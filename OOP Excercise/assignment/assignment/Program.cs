@@ -253,7 +253,7 @@ class Book
                     Console.WriteLine("enter owner name ");
                     card.cardOwner = Console.ReadLine();
 
-                    Console.WriteLine("enter loan date ");
+                    Console.WriteLine("enter loan date "); //yyyy/dd/mm
                     card.loanDate = DateOnly.Parse(Console.ReadLine());
 
                     Console.WriteLine("enter give back date ");

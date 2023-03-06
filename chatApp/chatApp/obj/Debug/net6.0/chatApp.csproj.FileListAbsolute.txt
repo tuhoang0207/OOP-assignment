@@ -1,0 +1,15 @@
+C:\Users\Admin\Desktop\OOP-assignment\chatApp\chatApp\obj\Debug\net6.0\chatApp.csproj.AssemblyReference.cache
+C:\Users\Admin\Desktop\OOP-assignment\chatApp\chatApp\obj\Debug\net6.0\chatApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\Desktop\OOP-assignment\chatApp\chatApp\obj\Debug\net6.0\chatApp.AssemblyInfoInputs.cache
+C:\Users\Admin\Desktop\OOP-assignment\chatApp\chatApp\obj\Debug\net6.0\chatApp.AssemblyInfo.cs
+C:\Users\Admin\Desktop\OOP-assignment\chatApp\chatApp\obj\Debug\net6.0\chatApp.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\OOP-assignment\chatApp\chatApp\bin\Debug\net6.0\chatApp.exe
+C:\Users\Admin\Desktop\OOP-assignment\chatApp\chatApp\bin\Debug\net6.0\chatApp.deps.json
+C:\Users\Admin\Desktop\OOP-assignment\chatApp\chatApp\bin\Debug\net6.0\chatApp.runtimeconfig.json
+C:\Users\Admin\Desktop\OOP-assignment\chatApp\chatApp\bin\Debug\net6.0\chatApp.dll
+C:\Users\Admin\Desktop\OOP-assignment\chatApp\chatApp\bin\Debug\net6.0\chatApp.pdb
+C:\Users\Admin\Desktop\OOP-assignment\chatApp\chatApp\obj\Debug\net6.0\chatApp.dll
+C:\Users\Admin\Desktop\OOP-assignment\chatApp\chatApp\obj\Debug\net6.0\refint\chatApp.dll
+C:\Users\Admin\Desktop\OOP-assignment\chatApp\chatApp\obj\Debug\net6.0\chatApp.pdb
+C:\Users\Admin\Desktop\OOP-assignment\chatApp\chatApp\obj\Debug\net6.0\chatApp.genruntimeconfig.cache
+C:\Users\Admin\Desktop\OOP-assignment\chatApp\chatApp\obj\Debug\net6.0\ref\chatApp.dll
