@@ -24,22 +24,25 @@ public class Y2Client
             Stream stream = client.GetStream();
 
             Console.WriteLine("Connected to Y2Server.");
-            Console.Write("Enter your name: ");
+            while (true)
+            {
+                Console.Write("Enter your name: ");
 
-            string str = Console.ReadLine();
+                string str = Console.ReadLine();
+                var reader = new StreamReader(stream);
+                var writer = new StreamWriter(stream);
+                writer.AutoFlush = true;
 
-            // 2. send
-            byte[] data = encoding.GetBytes(str);
+                // 2. send
+                writer.WriteLine(str);
 
-            stream.Write(data, 0, data.Length);
-
-            // 3. receive
-            data = new byte[BUFFER_SIZE];
-            stream.Read(data, 0, BUFFER_SIZE);
-
-            Console.WriteLine(encoding.GetString(data));
-
-            // 4. Close
+                // 3. receive
+                str = reader.ReadLine();
+                Console.WriteLine(str);
+                if (str.ToUpper() == "BYE")
+                    break;
+            }
+            // 4. close
             stream.Close();
             client.Close();
         }

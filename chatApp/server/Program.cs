@@ -1,7 +1,8 @@
 ﻿using System;
-using System.Text;
+using System.IO;
 using System.Net;
 using System.Net.Sockets;
+using System.Text;
 
 public class Y2Server
 {
@@ -28,19 +29,27 @@ public class Y2Server
             Socket socket = listener.AcceptSocket();
             Console.WriteLine("Connection received from " + socket.RemoteEndPoint);
 
-            // 2. receive
-            byte[] data = new byte[BUFFER_SIZE];
-            socket.Receive(data);
+            var stream = new NetworkStream(socket);
+            var reader = new StreamReader(stream);
+            var writer = new StreamWriter(stream);
+            writer.AutoFlush = true;
 
-            string str = encoding.GetString(data);
-
-            // 3. send
-            socket.Send(encoding.GetBytes("Hello " + str));
-
+            while (true)
+            {
+                // 2. receive
+                string str = reader.ReadLine();
+                if (str.ToUpper() == "EXIT")
+                {
+                    writer.WriteLine("bye");
+                    break;
+                }
+                // 3. send
+                writer.WriteLine(socket.RemoteEndPoint + " : " + str);
+            }
             // 4. close
+            stream.Close();
             socket.Close();
             listener.Stop();
-
         }
         catch (Exception ex)
         {

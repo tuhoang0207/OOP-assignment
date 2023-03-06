@@ -1,13 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "SVFabrxsp++syHH/KJHGY1M3kxLwVNGahrUBndZEnnaBs3ejzSDaAKVvempMca5Vyvz74N9/VTTAZFRJ5jwOgw==",
+  "dgSpecHash": "DIUh5usXVe1qFf0vEkzlxc5x7TkvBjX7hF5MkuSl0GG9oRSy+bwAOaSsPwZ4/4Yw9qMVk5GAhh8xwtKsEb/+OQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Admin\\Desktop\\OOP-assignment\\chatApp\\server\\server.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.14\\microsoft.windowsdesktop.app.ref.6.0.14.nupkg.sha512",
-    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.14\\microsoft.netcore.app.ref.6.0.14.nupkg.sha512",
-    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.14\\microsoft.aspnetcore.app.ref.6.0.14.nupkg.sha512",
-    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.14\\microsoft.netcore.app.host.win-x64.6.0.14.nupkg.sha512"
-  ],
+  "expectedPackageFiles": [],
   "logs": []
 }
